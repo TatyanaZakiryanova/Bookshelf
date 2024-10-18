@@ -1,4 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice,PayloadAction } from '@reduxjs/toolkit';
+
 import { calcTotal } from '../../utils/Sum';
 import { FavItem, FavSlice } from './types';
 

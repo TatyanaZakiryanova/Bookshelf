@@ -1,0 +1,39 @@
+@import '../../styles/components/button.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/components/modal.scss';
+
+.overlay {
+  @include modal;
+  .inner {
+    background-color: rgb(216, 199, 188);
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    max-height: 90vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+    border-radius: 8px;
+    .close {
+      @include button;
+      font-size: 13px;
+      width: 35px;
+      height: 35px;
+      margin-bottom: $bottom;
+      &:hover {
+        background-color: white;
+      }
+    }
+    .back {
+      @include button;
+      font-size: 13px;
+      width: 35px;
+      height: 35px;
+      margin-left: 5px;
+      margin-bottom: $bottom;
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}

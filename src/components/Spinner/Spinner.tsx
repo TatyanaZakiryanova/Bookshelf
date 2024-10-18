@@ -1,4 +1,5 @@
 import { BiLoaderAlt } from 'react-icons/bi';
+
 import styles from './Spinner.module.scss';
 
 const Spinner = () => {

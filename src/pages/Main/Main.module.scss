@@ -2,40 +2,39 @@
 @import '../../styles/variables.scss';
 
 .top {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 50px auto 30px auto;
-    width: 85%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 50px auto 30px auto;
+  width: 85%;
 }
 
 .container {
-    width: 85%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,0.5fr));;
-    gap: 30px; 
-    padding: 20px 0;
-    justify-content: center;
-    background-color: $maincolor;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+  width: 85%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 0.5fr));
+  gap: 30px;
+  padding: 20px 0;
+  justify-content: center;
+  background-color: $maincolor;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
-    .favorites {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        text-decoration: none;
-        color: white;
-        font-size: 25px;
-        transition: $transition;
-        &:hover {
-            transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-          }
-        .icon {
-            font-size: 35px;
-        }
-    }
-
+.favorites {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  transition: $transition;
+  &:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  .icon {
+    font-size: 35px;
+  }
+}

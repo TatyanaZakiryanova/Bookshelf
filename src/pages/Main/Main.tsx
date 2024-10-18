@@ -1,18 +1,19 @@
-import Skeleton from './Skeleton';
 import { MdFavorite } from 'react-icons/md';
-import { Link } from 'react-router-dom';
-import Card from '../../components/Card/Card';
-import Search from '../../components/Search/Search';
-import styles from './Main.module.scss';
-import Order from '../../components/Order/Order';
-import Filter from '../../components/Filter/Filter';
-import Pagination from '../../components/Pagination/Pagination';
-import BooksNF from '../../components/BooksNF/BooksNF';
-import Language from '../../components/Language/Language';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import BooksContainer from '../../components/BooksContainer/BooksContainer';
+import BooksNF from '../../components/BooksNF/BooksNF';
+import Filter from '../../components/Filter/Filter';
+import Language from '../../components/Language/Language';
+import Order from '../../components/Order/Order';
+import Pagination from '../../components/Pagination/Pagination';
+import Search from '../../components/Search/Search';
 import { itemsSelector, statusSelector } from '../../redux/booksSlice/selectors';
-import { favItemsSelector } from '../../redux/favSlice/selectors';
 import { Status } from '../../redux/booksSlice/types';
+import { favItemsSelector } from '../../redux/favSlice/selectors';
+import styles from './Main.module.scss';
+import Skeleton from './Skeleton';
 
 const Main = (): JSX.Element => {
   const items = useSelector(itemsSelector);
@@ -39,7 +40,7 @@ const Main = (): JSX.Element => {
             <Filter />
           </div>
           <div className={styles.container}>
-            {status === Status.LOADING ? skeleton : <Card books={items} />}
+            {status === Status.LOADING ? skeleton : <BooksContainer books={items} />}
           </div>
           <div>
             <Pagination />

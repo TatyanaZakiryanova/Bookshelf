@@ -1,14 +1,14 @@
-@import '../../styles/components/popup.scss';
+@import '../../styles/components/dropdown.scss';
 
 .language {
-    @include popup;
+  @include dropdown;
+  @media screen and (max-width: 820px) {
+    font-size: 13px;
+  }
+  .title {
+    display: flex;
     @media screen and (max-width: 820px) {
-        font-size: 13px;
+      font-size: 13px;
     }
-    .title {
-        display: flex;
-        @media screen and (max-width: 820px) {
-            font-size: 13px;
-        }
-    }
+  }
 }

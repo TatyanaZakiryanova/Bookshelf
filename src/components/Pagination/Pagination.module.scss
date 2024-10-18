@@ -2,48 +2,48 @@
 @import '../../styles/variables.scss';
 
 .pagination {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px 0;
+  button {
+    @include button;
+    margin: 3px;
+    height: 40px;
+    width: 40px;
     display: flex;
     justify-content: center;
-    margin: 30px 0 10px 0;
-    button {
-        @include button;
-        margin: 3px;
-        height: 40px;
-        width: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: $transition;
-        &:disabled {
-            pointer-events: none;
-            background-color: rgba(255, 255, 255, 0.265);
-            .arrow {
-                color: rgba(255, 255, 255, 0.388);
-            }
-        }
-        &:hover {
-            background-color: white;
-        }
-        .arrow {
-        color: $maincolor;
-        }
+    align-items: center;
+    transition: $transition;
+    &:disabled {
+      pointer-events: none;
+      background-color: rgba(255, 255, 255, 0.265);
+      .arrow {
+        color: rgba(255, 255, 255, 0.388);
+      }
     }
-    .first {
-        font-size: 15px;
+    &:hover {
+      background-color: white;
     }
+    .arrow {
+      color: $maincolor;
+    }
+  }
+  .first {
+    font-size: 15px;
+  }
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 30px 0;
+  .number {
     display: flex;
     justify-content: center;
-    margin: 0 0 30px 0;
-    .number {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 25px;
-        width: 25px;
-        background-color:  rgba(255, 255, 255, 0.4);
-        border-radius: 8px;
-    }
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+  }
 }

@@ -1,13 +1,14 @@
+import { useEffect } from 'react';
+import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
+import { ImFirst } from 'react-icons/im';
 import { useSelector } from 'react-redux';
+
+import { statusSelector } from '../../redux/booksSlice/selectors';
+import { Status } from '../../redux/booksSlice/types';
 import { setStartIndex } from '../../redux/searchSlice/searchSlice';
 import { startIndexSelector } from '../../redux/searchSlice/selectors';
 import { useAppDispatch } from '../../redux/store';
 import styles from './Pagination.module.scss';
-import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
-import { ImFirst } from 'react-icons/im';
-import { useEffect } from 'react';
-import { statusSelector } from '../../redux/booksSlice/selectors';
-import { Status } from '../../redux/booksSlice/types';
 
 const Pagination = () => {
   const dispatch = useAppDispatch();

@@ -1,10 +1,11 @@
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import { useSelector } from 'react-redux';
+
 import { setFilterParameter } from '../../redux/searchSlice/searchSlice';
+import { filterSelector } from '../../redux/searchSlice/selectors';
 import { FilterEnum, FilterParams } from '../../redux/searchSlice/types';
 import { useAppDispatch } from '../../redux/store';
 import styles from './Filter.module.scss';
-import { filterSelector } from '../../redux/searchSlice/selectors';
-import { MdKeyboardArrowDown } from 'react-icons/md';
 
 const filterBy: FilterParams[] = [
   {
@@ -38,26 +39,24 @@ const Filter = () => {
   };
 
   return (
-    <>
-      <div className={styles.popup}>
-        <div className={styles.order}>
-          {filter.name} <MdKeyboardArrowDown size={15} />{' '}
-        </div>
-        <div className={styles.list}>
-          <ul>
-            {filterBy.map((obj, i) => (
-              <li
-                key={i}
-                onClick={() => onClickFilter(obj)}
-                className={filter.value === obj.value ? styles.active : ''}
-              >
-                {obj.name}
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className={styles.dropdown}>
+      <div className={styles.order}>
+        {filter.name} <MdKeyboardArrowDown size={15} />
       </div>
-    </>
+      <div className={styles.list}>
+        <ul>
+          {filterBy.map((obj) => (
+            <li
+              key={obj.value}
+              onClick={() => onClickFilter(obj)}
+              className={filter.value === obj.value ? styles.active : ''}
+            >
+              {obj.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 

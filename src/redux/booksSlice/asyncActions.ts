@@ -1,13 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { Book } from '../../pages/Main/types';
 import axios, { AxiosResponse } from 'axios';
+
+import { Book } from '../../pages/Main/types';
 import { ApiResponse, SearchParams } from './types';
 
 export const fetchBooks = createAsyncThunk<Book[], SearchParams>(
   'books/fetchBooks',
   async (params, { rejectWithValue }) => {
     const { search, orderBy, filter, startIndex, langRestrict } = params;
-    const apiKey = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
+    const apiKey: string = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY as string;
 
     try {
       const response: AxiosResponse<ApiResponse> = await axios.get(

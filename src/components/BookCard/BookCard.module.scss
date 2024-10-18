@@ -1,108 +1,44 @@
-@import '../../styles/components/button.scss';
 @import '../../styles/variables.scss';
-@import '../../styles/components/modal.scss';
+@import '../../styles/components/favicon.scss';
 
-.overlay {
-    @include modal;
-    .inner {
-        background-color: rgb(216, 199, 188);
-        width: 90%;
-        max-width: 800px;
-        height: auto;
-        max-height: 90vh;
-        padding: 20px;
-        box-sizing: border-box;
-        overflow: auto;
-        border-radius: 8px;
-        .close {
-            @include button;
-            font-size: 13px;
-            width: 35px;
-            height: 35px;
-            margin-bottom: $bottom;
-            &:hover {
-                background-color: white;
-            }
-        }
-        .back {
-            @include button;
-            font-size: 13px;
-            width: 35px;
-            height: 35px;
-            margin-left: 5px;
-            margin-bottom: $bottom;
-            &:hover {
-                background-color: white;
-            }
-        }
-        .inform {
-          display: flex;
-          justify-content: space-evenly;
-          h1 {
-            @media screen and (max-width: 430px) {
-                font-size: 20px;
-            }
-          }
-          img {
-            border-radius: 8px;
-          }
-        .info {
-            margin-bottom: $bottom;
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-            .buttons {
-                display: flex;
-                @media screen and (max-width: 430px) {
-                    flex-direction: column;
-                }
-                .page {
-                    @include button;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 110px;
-                    height: 40px;
-                    margin: 5px 5px 0 0;
-                    font-size: 15px;
-                    &:hover {
-                        background-color: white;
-                    }
-                    .icon {
-                        font-size: 18px;
-                    }
-                }
-            }
-            .add, .added {
-                @include button;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 225px;
-                height: 40px;
-                margin-top: 5px;
-                transition: background-color 0.3s ease;
-                &:hover {
-                    background-color: white;
-                }
-                @media screen and (max-width: 430px) {
-                    width: 110px;
-                    font-size: 15px;
-                }
-            }               
-            .added {
-                background-color: $maincolor;
-                &:hover {
-                  background-color: lighten($maincolor, 10%);
-                }
-            }
-         }
-        img {
-            width: 150px;
-            height: 200px;
-            margin-right: 20px;
-            margin-bottom: $bottom;
-        }
-        }
+.card {
+  margin-bottom: $bottom;
+  text-align: center;
+  transition: $transition;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+  }
+  img {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    height: 180px;
+    width: 130px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .addtofav {
+    @include favicon;
+    color: rgba(255, 255, 255, 0.5);
+    &:hover {
+      color: white;
     }
+  }
+  .added {
+    @include favicon;
+    color: white;
+  }
+  .inform {
+    .title {
+      font-size: 20px;
+    }
+    .author {
+      font-size: 15px;
+    }
+    .amount {
+      font-size: 17px;
+    }
+  }
 }

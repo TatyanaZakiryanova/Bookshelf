@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useAppDispatch } from '../../redux/store';
-import { setOrderParameter } from '../../redux/searchSlice/searchSlice';
-import { fetchBooks } from '../../redux/booksSlice/asyncActions';
-import styles from './Order.module.scss';
-import { OrderEnum, OrderParams } from '../../redux/searchSlice/types';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import { useSelector } from 'react-redux';
+
+import { fetchBooks } from '../../redux/booksSlice/asyncActions';
+import { setOrderParameter } from '../../redux/searchSlice/searchSlice';
 import {
   filterValueSelector,
   langRestrictValueSelector,
@@ -13,7 +12,9 @@ import {
   searchSelector,
   startIndexSelector,
 } from '../../redux/searchSlice/selectors';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import { OrderEnum, OrderParams } from '../../redux/searchSlice/types';
+import { useAppDispatch } from '../../redux/store';
+import styles from './Order.module.scss';
 
 const order: OrderParams[] = [
   {
@@ -48,7 +49,12 @@ const Order = () => {
       }
       setInitialQueryDone(true);
     };
-    fetchData();
+
+    const fetchAsync = async () => {
+      await fetchData();
+    };
+
+    fetchAsync();
   }, [dispatch, orderBy, filter, startIndex, langRestrict]);
 
   const onClickOrder = (obj: OrderParams) => {
@@ -56,26 +62,24 @@ const Order = () => {
   };
 
   return (
-    <>
-      <div className={styles.popup}>
-        <div className={styles.order}>
-          {orderName} <MdKeyboardArrowDown size={15} />
-        </div>
-        <div className={styles.list}>
-          <ul>
-            {order.map((obj, i) => (
-              <li
-                key={i}
-                onClick={() => onClickOrder(obj)}
-                className={orderBy === obj.parameter ? styles.active : ''}
-              >
-                {obj.name}
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className={styles.dropdown}>
+      <div className={styles.order}>
+        {orderName} <MdKeyboardArrowDown size={15} />
       </div>
-    </>
+      <div className={styles.list}>
+        <ul>
+          {order.map((obj) => (
+            <li
+              key={obj.parameter}
+              onClick={() => onClickOrder(obj)}
+              className={orderBy === obj.parameter ? styles.active : ''}
+            >
+              {obj.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 

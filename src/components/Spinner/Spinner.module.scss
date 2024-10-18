@@ -1,13 +1,13 @@
 .loader {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 7rem;
-    .spinner {
-        font-size: 3rem;
-        animation: spin 2s linear infinite;
-        color:  rgb(62, 47, 35);
-      }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7rem;
+  .spinner {
+    font-size: 3rem;
+    animation: spin 2s linear infinite;
+    color: rgb(62, 47, 35);
+  }
 }
 
 @-webkit-keyframes spin {
@@ -20,10 +20,10 @@
 }
 
 @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}

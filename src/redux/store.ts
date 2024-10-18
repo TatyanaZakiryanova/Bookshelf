@@ -1,19 +1,20 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
-import favReducer from './favSlice/favSlice';
-import booksReducer from './booksSlice/booksSlice';
-import searchReducer from './searchSlice/searchSlice';
 import {
-  persistReducer,
-  persistStore,
   FLUSH,
-  REHYDRATE,
   PAUSE,
   PERSIST,
+  persistReducer,
+  persistStore,
   PURGE,
   REGISTER,
+  REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
+import booksReducer from './booksSlice/booksSlice';
+import favReducer from './favSlice/favSlice';
+import searchReducer from './searchSlice/searchSlice';
 
 const persistConfig = {
   key: 'root',

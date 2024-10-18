@@ -2,20 +2,20 @@
 @import '../../styles/variables.scss';
 
 .error {
-    padding: 5rem;
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .back {
-        @include button;
-        padding: 0.5rem;
-        margin-top: 30px;
-        font-size: 1.5rem;
-        transition: $transition;
-        &:hover {
-        color: white;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  .back {
+    @include button;
+    padding: 0.5rem;
+    margin-top: 30px;
+    transition: $transition;
+    &:hover {
+      color: white;
     }
-    }
+  }
 }

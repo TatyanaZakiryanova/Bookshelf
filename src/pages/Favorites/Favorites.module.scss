@@ -2,61 +2,61 @@
 @import '../../styles/variables.scss';
 
 .title {
-    font-size: 2rem;
-    padding: 10px;
+  font-size: 2rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  .icon {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 15px;
-    .icon {
-        display: flex;
-        align-items: center;
-    }
-    p {
-        font-size: 1rem;
-    }
+  }
+  p {
+    font-size: 1rem;
+  }
 }
 
 .items {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 50px;
 }
 
 .total {
-    padding: 10px;
-    margin: 20px 0 20px 60px;
-    font-size: 1.5rem;
-    background-color: white;
-    width: 250px;
-    text-align: center;
-    display: flex;
-    border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0 20px 60px;
+  font-size: 1.5rem;
+  background-color: white;
+  width: 250px;
+  text-align: center;
+  display: flex;
+  border-radius: 8px;
 }
 
 .bottom {
-    display: flex;
-    justify-content: space-between;
-.back {
+  display: flex;
+  justify-content: space-between;
+  .back {
     @include button;
     padding: 8px;
     margin: 0 0 50px 60px;
     &:hover {
-        background-color: rgb(255, 255, 255, 0.9);
+      background-color: rgb(255, 255, 255, 0.9);
     }
     a {
-        transition: $transition;
+      transition: $transition;
     }
-}
+  }
 
-.clear {
+  .clear {
     @include button;
     display: flex;
     align-items: center;
     margin: 0 50px 50px 0;
     padding: 8px;
     &:hover {
-        background-color: rgb(255, 255, 255, 0.9);
+      background-color: rgb(255, 255, 255, 0.9);
     }
-}
+  }
 }

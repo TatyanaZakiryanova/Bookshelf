@@ -1,10 +1,23 @@
 import React from 'react';
-import { addItem, minusNumber, removeItem } from '../../redux/favSlice/favSlice';
-import styles from './FavBook.module.scss';
-import { useAppDispatch } from '../../redux/store';
-import { FavItem } from '../../redux/favSlice/types';
 
-const FavBook: React.FC<FavItem> = ({
+import { addItem, minusNumber, removeItem } from '../../redux/favSlice/favSlice';
+import { FavItem } from '../../redux/favSlice/types';
+import { useAppDispatch } from '../../redux/store';
+import styles from './FavBook.module.scss';
+
+interface FavBookProps {
+  id: string;
+  title: string;
+  authors: string[];
+  thumbnail: string;
+  publisher: string;
+  publishedDate: string;
+  previewLink: string;
+  amount: string;
+  count: number;
+}
+
+const FavBook: React.FC<FavBookProps> = ({
   id,
   thumbnail,
   title,

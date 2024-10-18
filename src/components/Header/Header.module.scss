@@ -1,20 +1,20 @@
 @import '../../styles/variables.scss';
 
 .header {
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../../assets/images/header-background.jpg');
-    background-size: cover;
-    flex-wrap: wrap;
-    .logo {
-        color: rgb(198, 190, 185);
-    }
-    .title {
-        margin: 50px;
-        background-color: $opacity;
-        min-width: 250px;
-        border-radius: 8px;
-    }
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/header-background.jpg');
+  background-size: cover;
+  flex-wrap: wrap;
+  .logo {
+    color: rgb(198, 190, 185);
+  }
+  .title {
+    margin: 50px;
+    background-color: $opacity;
+    min-width: 250px;
+    border-radius: 8px;
+  }
 }

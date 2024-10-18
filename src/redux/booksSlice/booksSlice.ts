@@ -1,7 +1,8 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { BooksState, Status } from './types';
+import { createSlice,PayloadAction } from '@reduxjs/toolkit';
+
 import { Book } from '../../pages/Main/types';
 import { fetchBooks } from './asyncActions';
+import { BooksState, Status } from './types';
 
 const initialState: BooksState = {
   items: [],

@@ -1,12 +1,13 @@
-import NotFavorites from '../../components/Favorites/NotFavorites';
-import { FavItem } from '../../redux/favSlice/types';
-import FavBook from '../../components/Favorites/FavBook';
-import { Link } from 'react-router-dom';
-import styles from './Favorites.module.scss';
-import { useSelector } from 'react-redux';
-import { favItemsSelector, favTotalSelector } from '../../redux/favSlice/selectors';
 import { useState } from 'react';
-import ClearListModal from '../../components/ModalClear/ClearListModal';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import ClearListModal from '../../components/ClearListModal/ClearListModal';
+import FavBook from '../../components/FavBook/FavBook';
+import NotFavorites from '../../components/NotFavorites/NotFavorites';
+import { favItemsSelector, favTotalSelector } from '../../redux/favSlice/selectors';
+import { FavItem } from '../../redux/favSlice/types';
+import styles from './Favorites.module.scss';
 
 const Favorites = () => {
   const items = useSelector(favItemsSelector);
